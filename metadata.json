@@ -2,5 +2,5 @@
   "name": "Weosource",
   "description": "Premium product outsourcing and customization solutions for corporations and retailers. High quality, global reach, and affordable pricing.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
