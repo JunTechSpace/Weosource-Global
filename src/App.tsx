@@ -23,6 +23,7 @@ import {
   Users
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { WeosourceLogo } from './components/WeosourceLogo';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,10 +51,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="/" className="flex items-center gap-3 group">
           <div className="relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full scale-150 group-hover:scale-110 transition-transform duration-500" />
-            <div className="relative w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center shadow-lg border-2 border-cyan-400/50">
-              <Globe className="text-cyan-400 w-7 h-7 animate-pulse" />
-            </div>
+            <div className="absolute inset-0 bg-cyan-400/10 blur-xl rounded-full scale-150 group-hover:scale-110 transition-transform duration-500" />
+            <WeosourceLogo className="h-[88px] w-auto relative z-10 transition-transform duration-300 group-hover:scale-105" />
           </div>
           <div className="flex flex-col">
             <span className="text-2xl font-black tracking-tighter text-slate-900 leading-none">
@@ -239,7 +238,7 @@ export default function App() {
               { label: 'Global Manufacturers', value: '500+' },
               { label: 'Countries Reached', value: '45+' },
               { label: 'Quality Assurance Rank', value: 'Tier 1' },
-              { label: 'Cost Reduction Avg', value: '28%' },
+              { label: 'Cost Reduction Avg', value: '42%' },
             ].map((stat, i) => (
               <div key={i} className="text-center md:text-left">
                 <p className="text-3xl font-bold text-slate-900 mb-1">{stat.value}</p>
@@ -247,6 +246,36 @@ export default function App() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Who We Are / Mission Section */}
+      <section id="about" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Who we are</h2>
+            <h3 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              A turnkey service that takes the hassle out of your hands.
+            </h3>
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10">
+              We help businesses save time and money with our turnkey service, while building brand affinity through quality, highly personalised products. Our mission is to make the experience of sourcing and giving just as enjoyable and seamless as receiving.
+            </p>
+            <div className="flex flex-wrap justify-center gap-12 pt-8 border-t border-slate-50">
+              <div className="text-left">
+                <h4 className="font-bold text-slate-900 mb-2 italic">Flawless Execution</h4>
+                <p className="text-sm text-slate-500">We think beyond design. We ensure every unit is perfect.</p>
+              </div>
+              <div className="text-left">
+                <h4 className="font-bold text-slate-900 mb-2 italic">Personalised Strategy</h4>
+                <p className="text-sm text-slate-500">Your story - we just help you tell it through products.</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -291,8 +320,8 @@ export default function App() {
             />
             <ServiceCard 
               icon={Users}
-              title="Corporate Gifting"
-              description="Premium branded merchandise for employee engagement and client appreciation. High-retention products that reflect your corporate values."
+              title="Curation & Brand Storytelling"
+              description="Beyond design and curation, we see corporate gifting as an opportunity to delight. We ensure flawless execution for gifts that tell your brand's unique story."
               delay={0.5}
             />
             <ServiceCard 
@@ -488,9 +517,7 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-3 mb-6">
-                <div className="relative w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center border border-cyan-400/30">
-                  <Globe className="text-cyan-400 w-6 h-6" />
-                </div>
+                <WeosourceLogo className="h-20 w-auto" />
                 <div className="flex flex-col">
                   <span className="text-xl font-black tracking-tighter text-slate-900 leading-none">
                     Weo<span className="text-cyan-500">source</span>
